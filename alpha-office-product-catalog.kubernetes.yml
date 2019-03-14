@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: product-catalog-app
   labels:
-    commit: 3bf0058350be94d19951a1182c221a1b20b245c1
+    commit: 4ca160fd05c003e5067fd6d9c8213656b24b962c
 spec:
   replicas: 2
   selector:
@@ -13,11 +13,11 @@ spec:
     metadata:
       labels:
         app: product-catalog-app
-        commit: 3bf0058350be94d19951a1182c221a1b20b245c1
+        commit: 4ca160fd05c003e5067fd6d9c8213656b24b962c
     spec:
       containers:
       - name: product-catalog-app-container
-        image: kuzdo/alpha-office-product-catalog:master-3bf0058350be94d19951a1182c221a1b20b245c1
+        image: derekoneil/alpha-office-product-catalog:master-4ca160fd05c003e5067fd6d9c8213656b24b962c
         imagePullPolicy: Always
         ports:
         - name: pc-app-port
@@ -32,13 +32,13 @@ metadata:
   name: product-catalog-service
   labels:
     app: product-catalog-app
-    commit: 3bf0058350be94d19951a1182c221a1b20b245c1
+    commit: 4ca160fd05c003e5067fd6d9c8213656b24b962c
 spec:
   ports:
   - port: 30000
     targetPort: 80
   selector:
     app: product-catalog-app
-    commit: 3bf0058350be94d19951a1182c221a1b20b245c1
+    commit: 4ca160fd05c003e5067fd6d9c8213656b24b962c
   type: LoadBalancer
 ---
